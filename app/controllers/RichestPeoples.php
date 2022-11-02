@@ -32,7 +32,7 @@ class RichestPeoples extends Controller
     }
 
     // deleting person from db with $id form url
-    $this->Richestpeople->deleteRichestPeople($id);
+    $this->RichestPeople->deleteRichestPeople($id);
 
     // creating data to view with messages and the id from the url
     $data = [
