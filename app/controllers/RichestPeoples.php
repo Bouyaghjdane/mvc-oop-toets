@@ -1,26 +1,26 @@
 <?php
 
-class PoorPeoples extends Controller
+class RichestPeoples extends Controller
 {
   public function __construct()
   {
     // setting model to controller
-    $this->poorPeopleModal = $this->modal('PoorPeople');
+    $this->RichestPeople = $this->modal('RichestPeople');
   }
 
   public function index()
   {
     // Getting alle the poor people from database
-    $records = $this->poorPeopleModal->getPoorPeople();
+    $records = $this->RichestPeople->getRichestPeople();
 
     // creating data to view
     $data = [
-      'title' => 'Armste mensen van de wereld',
+      'title' => 'Rijkste mensen van de wereld',
       'records' => $records
     ];
 
     // setting data to view
-    $this->view('PoorPeople/index', $data);
+    $this->view('RichestPeople/index', $data);
   }
 
   // poorpeoples/delete
@@ -28,11 +28,11 @@ class PoorPeoples extends Controller
   {
     // if it doesn't exist redirect to /poorpeoples
     if (!isset($id)) {
-      header('Location: ' . URLROOT . '/PoorPeoples');
+      header('Location: ' . URLROOT . '/RichestPeoples');
     }
 
     // deleting person from db with $id form url
-    $this->poorPeopleModal->deletePoorPeople($id);
+    $this->Richestpeople->deleteRichestPeople($id);
 
     // creating data to view with messages and the id from the url
     $data = [
@@ -40,28 +40,25 @@ class PoorPeoples extends Controller
     ];
 
     // setting data to the view
-    $this->view('PoorPeople/message', $data);
+    $this->view('RichestPeople/message', $data);
   }
 
-  // poorpeoples/create
+  // RichestPeoples/create
   public function create()
   {
     var_dump($_POST);
 
-    // check if method is post or else redirect to /PoorPeoples
+    // check if method is post or else redirect to /RichestPeoples
     if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-      header('Location: ' . URLROOT . '/PoorPeoples');
+      header('Location: ' . URLROOT . '/RichestPeoples');
       return;
     }
 
     // inserting data into db
-    $this->poorPeopleModal->createPoorPeople($_POST);
+    $this->Richestpeople->createRichestPeople($_POST);
 
     // creating data to view with messages and the id from the url
     echo 'je wordt over 5 seconden terug gestuurd';
-    header('Refresh: 5; URL=' . URLROOT . '/PoorPeoples');
+    header('Refresh: 5; URL=' . URLROOT . '/RichestPeoples');
   }
 }
-
-?>
-//PoorPeoples

@@ -1,6 +1,6 @@
 <?php
 
-class Richestpeople
+class RichestPeople
 {
 
   private $db;
@@ -10,7 +10,7 @@ class Richestpeople
     $this->db = new Database();
   }
 
-  public function deleteRichestpeople($id)
+  public function deleteRichestPeople($id)
   {
     // var_dump($this->db);
     // exit();
@@ -23,22 +23,22 @@ class Richestpeople
     }
   }
 
-  public function getPoorPeople()
+  public function getRichestPeople()
   {
-    $this->db->query('SELECT * FROM poorpeople');
+    $this->db->query('SELECT * FROM richestpeople');
     return $this->db->resultSet();
   }
 
-  public function getSinglePoorPeople($id)
+  public function getSingleRichestPeople($id)
   {
-    $this->db->query('SELECT * FROM poorpeople WHERE id = :id');
+    $this->db->query('SELECT * FROM richestpeople WHERE id = :id');
     $this->db->bind(':id', $id);
     return $this->db->single();
   }
 
-  public function createPoorPeople($post)
+  public function createRichestPeople($post)
   {
-    $this->db->query('INSERT INTO `poorpeople` (`id`, `Name`, `Nethworth`, `Age`, `MyCompany`) VALUES (NULL, :namex, :nethworth, :age, :mycompany);');
+    $this->db->query('INSERT INTO `richestpeople` (`id`, `Name`, `Nethworth`, `Age`, `MyCompany`) VALUES (NULL, :namex, :nethworth, :age, :mycompany);');
     $this->db->bind(':namex', $post['Name']);
     $this->db->bind(':nethworth', $post['Nethworth']);
     $this->db->bind(':age', $post['Age']);
