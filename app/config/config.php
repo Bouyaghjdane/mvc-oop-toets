@@ -11,7 +11,7 @@ define('DB_NAME', 'mvc-be');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // De url van de site
-define('URLROOT', 'http://www.mvc-framework.com');
+define('URLROOT', 'http://mvc-oop-herkansing.com/');
 
 // Naam van de site
 define('SITENAME', 'mvc-be');

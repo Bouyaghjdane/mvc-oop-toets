@@ -1,6 +1,6 @@
 <?php
 
-class PoorPeople
+class Richestpeople
 {
 
   private $db;
@@ -10,12 +10,12 @@ class PoorPeople
     $this->db = new Database();
   }
 
-  public function deletePoorPeople($id)
+  public function deleteRichestpeople($id)
   {
     // var_dump($this->db);
     // exit();
     try {
-      $this->db->query('DELETE FROM poorpeople WHERE id = :id');
+      $this->db->query('DELETE FROM richestpeople WHERE id = :id');
       $this->db->bind(':id', $id, PDO::PARAM_INT);
       return $this->db->execute();
     } catch (PDOException $e) {

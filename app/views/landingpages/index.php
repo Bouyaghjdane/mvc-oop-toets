@@ -1,0 +1,1 @@
+<a href="<?= URLROOT; ?>/RichestPeoples/index">BE-oop-toets</a>
