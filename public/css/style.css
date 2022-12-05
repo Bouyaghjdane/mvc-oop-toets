@@ -3,7 +3,7 @@ h3 {
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana , sans-serif;
 }
 
 #test {
@@ -11,6 +11,11 @@ body {
 }
 
 .errorForm {
+    color: red;
+    font-size: 0.7em;
+}
+
+.topicError {
     color: red;
     font-size: 0.7em;
 }

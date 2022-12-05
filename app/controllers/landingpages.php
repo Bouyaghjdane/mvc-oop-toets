@@ -9,7 +9,8 @@ class landingpages extends Controller
   public function index()
   {
     $data = [
-      'title' => 'Richest People'
+      'title' => 'Richest People',
+      'Homepage MVC OOP Framework'
     ];
     $this->View('landingpages/index', $data);
   }
